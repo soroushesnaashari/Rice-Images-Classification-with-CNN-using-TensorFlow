@@ -43,7 +43,7 @@ The project demonstrates the potential of deep learning for agricultural applica
 ### Repository Contents
 
 - **`Data`:** Contains the [Original Dataset](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset/data) and you can see the cleaned dataset in notebook.
-- **`Notebook`:** Jupyter notebook detailing the entire process, including data cleaning, visualization and modeling.
+- **`Notebook`:** Contains the full implementation of the rice classification project, including data preprocessing, CNN model creation, training, evaluation, and visualization of results.
 - **`README.md`:** Project documentation.
 
 <br>
