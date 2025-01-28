@@ -11,7 +11,7 @@ The project demonstrates the potential of deep learning for agricultural applica
 ### **Project Workflow**  
 1. **Data Preparation**:  
    - Collected a dataset comprising 75,000 images of rice grains, categorized into five varieties.  
-   - Resized all images to a uniform size of 256x256 pixels for consistent input to the CNN model.  
+   - Resized all images to a uniform size of 250x250 pixels for consistent input to the CNN model.  
    - Split the dataset into training, validation, and test sets to ensure reliable evaluation of the model.  
 
 2. **Model Development**:  
