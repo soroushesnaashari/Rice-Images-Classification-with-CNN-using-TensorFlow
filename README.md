@@ -2,48 +2,59 @@
 [![](Image.jpg)](https://unsplash.com/photos/aerial-view-photography-of-rice-crops-during-daytime-cusz0Bg-5mQ)
 
 ### Overview
-This project focuses on classifying five different rice varieties commonly grown in Turkey: Arborio, Basmati, Ipsala, Jasmine, and Karacadag. Using a dataset of 75,000 grain images (15,000 per variety), a Convolutional Neural Network (CNN) model was developed to accurately distinguish between these varieties based on their texture, shape, and color features.  
-
-The project demonstrates the potential of deep learning for agricultural applications, particularly in automating the classification and quality assessment of grains.  
+This project focuses on classifying rice images into five categories (Arborio, Basmati, Ipsala, Jasmine, Karacadag) using deep learning techniques. It leverages a dataset of 15,000 images to train two models: a custom Convolutional Neural Network (CNN) and a fine-tuned ResNet50 model. Implemented with TensorFlow/Keras, the project includes data augmentation, transfer learning, and comprehensive evaluation metrics. The custom CNN achieves **98% accuracy**, while the ResNet50 model reaches **99% accuracy** on test data.
 
 <br>
 
-### **Project Workflow**  
-1. **Data Preparation**:  
-   - Collected a dataset comprising 75,000 images of rice grains, categorized into five varieties.  
-   - Resized all images to a uniform size of 250x250 pixels for consistent input to the CNN model.  
-   - Split the dataset into training, validation, and test sets to ensure reliable evaluation of the model.  
+### Project Workflow
+1. **Data Loading & Preprocessing**: 
+   - Load dataset from Kaggle and split into training (70%), validation (15%), and test (15%) sets.
+   - Resize images to 224x224 pixels and normalize pixel values.
+   - Apply data augmentation (rotation, shifts, flip, zoom) to reduce overfitting.
 
-2. **Model Development**:  
-   - Designed a CNN architecture with three convolutional layers, max-pooling layers, a dense layer, and a dropout layer to prevent overfitting.  
-   - Compiled the model using the Adam optimizer and categorical crossentropy loss function.  
+2. **Model Development**:
+   - **Custom CNN Architecture**: Built with `Conv2D`, `MaxPooling2D`, `Dropout`, and `Dense` layers.
+   - **ResNet50 Transfer Learning**: Pre-trained on ImageNet, fine-tuned with additional dense layers.
+   - Both models use `Adam` optimizer and `sparse_categorical_crossentropy` loss.
 
-3. **Training**:  
-   - Trained the CNN model on the prepared dataset for multiple epochs, monitoring accuracy and validation loss to fine-tune performance.  
+3. **Training**:
+   - Train for 30 epochs with early stopping (`patience=3`) and model checkpointing.
+   - Batch size of 64 for efficient training.
 
-4. **Evaluation**:  
-   - Tested the model on unseen data to assess its generalization ability.  
+4. **Evaluation**:
+   - Evaluate accuracy on test data.
+   - Generate confusion matrices and classification reports.
+   - Visualize training/validation accuracy and loss curves.
+
+5. **Prediction**:
+   - Predict rice classes for new images using saved models.
 
 <br>
 
-### **Key Features**  
-- **Extensive Dataset**: Utilized a large dataset with 75,000 images across five rice varieties.  
-- **Deep Learning**: Implemented a CNN architecture tailored for image classification tasks.  
-- **Automated Classification**: Achieved accurate predictions for rice varieties based on their unique features.  
-- **Scalability**: The methodology can be extended to classify other agricultural products.  
+### Key Features
+- **Dual Model Approach**: Compare a custom CNN with a pre-trained ResNet50 model.
+- **Data Augmentation**: Enhances generalization using real-time augmentation layers.
+- **Visualization Tools**: Plot training history, confusion matrices, and sample predictions.
+- **Transfer Learning**: Utilize ResNet50 weights for improved performance.
+- **Model Persistence**: Save/load models for deployment or further use.
 
 <br>
 
-### **Results**  
-- The CNN model achieved an accuracy of **`98%`** on the test dataset, effectively classifying the five rice varieties.  
-- This result highlights the potential of deep learning in enhancing agricultural automation and quality control processes.  
+### Results
+- **Custom CNN**:  
+  - Test Accuracy: **98%**  
+  - Validation Accuracy: ~97% (at epoch 8/30, early stopping)  
+- **ResNet50**:  
+  - Test Accuracy: **99%**  
+  - Validation Accuracy: ~99% (at epoch 14/30)  
+- **Confusion Matrices**: Show minimal misclassifications, with ResNet50 outperforming the custom CNN.  
+- Detailed metrics available in classification reports (precision, recall, F1-score).
 
 <br>
 
 ### Repository Contents
-
+- **`rice_classification.ipynb`**: Jupyter Notebook with full code, visualizations, and explanations.
 - **`Data`:** Contains the [Original Dataset](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset/data) and you can see the cleaned dataset in notebook.
-- **`Notebook`:** Contains the full implementation of the rice classification project, including data preprocessing, CNN model creation, training, evaluation, and visualization of results.
 - **`README.md`:** Project documentation.
 
 <br>
