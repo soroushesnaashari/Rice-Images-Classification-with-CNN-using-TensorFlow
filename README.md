@@ -36,7 +36,7 @@ The project follows an end-to-end workflow:
 <br>
 
 ### Results
-- **Model Performance:** The trained CNN achieves competitive accuracy in classifying rice images (e.g., reaching an accuracy of over 90% on the validation set).
+- **Model Performance:** The trained CNN achieves competitive accuracy in classifying rice images (e.g., reaching an accuracy of **`over 99% on both models`** on the training set).
 - **Visual Insights:** Training and validation loss/accuracy curves are generated to monitor overfitting and learning progress.
 - **Error Analysis:** Confusion matrices and misclassified examples provide insight into the model's decision-making and help guide future improvements.
 
